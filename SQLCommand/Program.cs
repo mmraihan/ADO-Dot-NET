@@ -30,12 +30,16 @@ namespace SQLCommand
             {
                 using (con=new SqlConnection(cs) )
                 {
+                    string query = "select * from Students";
+                    SqlCommand cmd = new SqlCommand(query,con);
                     con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                    if (con.State == ConnectionState.Open)
+                    while (dr.Read())
                     {
-                        Console.WriteLine("Connected");
+                        Console.WriteLine($"Id: {dr["Id"]} Name: {dr["Name"]} DateOfBirth: {dr ["DateOfbirth"]} CGPA: {dr["CGPA"]}");
                     }
+                    
                 }
                
             }
