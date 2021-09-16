@@ -52,7 +52,7 @@ namespace SqlCommand_ExecuteNonQuery
                     }
                     else
                     {
-                        Console.WriteLine("Failed");
+                        Console.WriteLine("Failed");// 
                     }
                    
 
